@@ -14,7 +14,26 @@ public class Player : MonoBehaviour
     private InputActionReference _movement, _attack, _pointer;
 
     [SerializeField]
+    private WeaponParentController weaponParent;
+
+    [SerializeField]
     private PlayerMover mover;
+
+    private void OnEnable()
+    {
+        _attack.action.performed += PerformAttack;
+    }
+
+    private void OnDisable()
+    {
+        _attack.action.performed -= PerformAttack;
+    }
+
+    private void PerformAttack(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Player has attacked");
+    }
+
 
     /*private void Start()
     {
@@ -24,6 +43,8 @@ public class Player : MonoBehaviour
     private void Update()
     {
         pointerInput = GetPointerPosition();
+
+        weaponParent.PointerPos = pointerInput;
 
         movementInput = _movement.action.ReadValue<Vector2>();
 
