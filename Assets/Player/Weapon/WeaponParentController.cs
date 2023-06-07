@@ -6,6 +6,8 @@ public class WeaponParentController : MonoBehaviour
 {
     public Vector2 PointerPos { get; set; }
 
+    public GameObject weaponPos;
+
     [SerializeField]
     private SpriteRenderer Weapon;
 

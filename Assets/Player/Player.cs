@@ -12,6 +12,11 @@ public class Player : MonoBehaviour
     private Vector2 pointerInput;
 
     [SerializeField]
+    private GameObject bulletObject;
+
+    private Projectile bulletType;
+
+    [SerializeField]
     private InputActionReference _movement, _attack, _pointer;
 
     [SerializeField]
@@ -32,14 +37,16 @@ public class Player : MonoBehaviour
 
     private void PerformAttack(InputAction.CallbackContext obj)
     {
-        Debug.Log("Player has attacked");
+        //pull bullet from pool here (ask charlie how it's coming along)
+        GameObject bullet = Instantiate(bulletObject, weaponParent.weaponPos.transform.position, Quaternion.identity);
+        bullet.GetComponent<Projectile>().SetShootDirection(transform.position, pointerInput);
     }
 
 
-    /*private void Start()
+    private void Start()
     {
-        
-    }*/
+        bulletType = bulletObject.GetComponent<Projectile>();
+    }
 
     private void Update()
     {

@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3129fc5f32fdd1745836fe8941c9c049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponPos: {fileID: 1495140955}
   Weapon: {fileID: 1495140957}
 --- !u!1 &1264550457
 GameObject:
@@ -496,6 +497,7 @@ GameObject:
   - component: {fileID: 1890781612}
   - component: {fileID: 1890781613}
   - component: {fileID: 1890781614}
+  - component: {fileID: 1890781615}
   m_Layer: 0
   m_Name: Lantern
   m_TagString: Untagged
@@ -583,6 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c797b28b2d2a982449cc89c0278dd5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletObject: {fileID: 3789277746024473864, guid: 14a4d75ac2fde5e40ae59aa9d8f98022, type: 3}
   _movement: {fileID: 8823521009187260963, guid: 624284eebe3c5d8459ada6b2a987ec40, type: 3}
   _attack: {fileID: 3630575276741565103, guid: 624284eebe3c5d8459ada6b2a987ec40, type: 3}
   _pointer: {fileID: 6123423358172900745, guid: 624284eebe3c5d8459ada6b2a987ec40, type: 3}
@@ -623,4 +626,20 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!70 &1890781615
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890781609}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
