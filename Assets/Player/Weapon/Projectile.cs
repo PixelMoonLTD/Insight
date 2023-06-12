@@ -28,9 +28,21 @@ public class Projectile : MonoBehaviour
     void FixedUpdate()
     {
         rb2d.velocity = shootDir * speed * Time.deltaTime;
-        /*if(isActiveAndEnabled)
+
+        if (speed > 80)
         {
-            rb2d.velocity = shootDir * speed;
-        }*/
+            speed -= .75f;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<Enemies.Scripts.Enemy>().TakeDamage((int)(damage * speed/75));
+            Debug.Log(damage * (speed/75));
+
+            Destroy(gameObject);
+        }
     }
 }

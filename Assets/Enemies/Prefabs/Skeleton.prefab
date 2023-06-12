@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4646882661447884408}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4646882661447884404
 SpriteRenderer:
@@ -128,5 +128,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d637e8b83e544c7af37653938c18c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   enemyData: {fileID: 11400000, guid: 14c56e799f02c7145a140d7882223021, type: 2}
