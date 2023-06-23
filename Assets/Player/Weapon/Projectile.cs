@@ -23,6 +23,8 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+
+        Destroy(gameObject, 5f);
     }
 
     void FixedUpdate()
@@ -40,6 +42,7 @@ public class Projectile : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemies.Scripts.Enemy>().TakeDamage((int)(damage * speed/75));
+            //collision.gameObject.transform.position = Vector3.Lerp(collision.gameObject.transform.position, collision.gameObject.transform.position + (Vector3)rb2d.velocity, .5f);
             Debug.Log(damage * (speed/75));
 
             Destroy(gameObject);
