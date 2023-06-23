@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    private enum lightIntensity { Increasing, Decreasing }
+    lightIntensity light_intensity;
+
     Rigidbody2D rb2d;
 
     [SerializeField]
     float damage = 10f;
     [SerializeField]
     float speed = 5f;
+
+    private Light2D light;
 
     Vector2 shootDir = new Vector2();
 
@@ -23,6 +29,8 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+
+        light = transform.GetChild(0).GetComponent<Light2D>();
     }
 
     void FixedUpdate()
@@ -32,6 +40,25 @@ public class Projectile : MonoBehaviour
         if (speed > 80)
         {
             speed -= .75f;
+        }
+
+        if(light.intensity >= 25)
+        {
+            light_intensity = lightIntensity.Decreasing;
+        }
+        if(light.intensity <= 15)
+        {
+            light_intensity = lightIntensity.Increasing;
+        }
+
+        if(light_intensity == lightIntensity.Decreasing)
+        {
+            light.intensity -= 0.85f;
+        }
+
+        if(light_intensity == lightIntensity.Increasing)
+        {
+            light.intensity += 0.85f;
         }
     }
 

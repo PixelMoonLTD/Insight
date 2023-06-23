@@ -147,14 +147,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275281581}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.99, y: -0.01999998, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7144727, w: 0.6996633}
+  m_LocalPosition: {x: 0.08, y: -0.01999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 500959400}
+  m_Father: {fileID: 1890781611}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -91.2}
 --- !u!114 &275281583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,9 +170,9 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.1
+  m_FalloffIntensity: 0.056
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 40
+  m_Intensity: 14.6
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -220,8 +220,8 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 359.99997
-  m_PointLightOuterAngle: 359.99997
+  m_PointLightInnerAngle: 45.10007
+  m_PointLightOuterAngle: 274.6034
   m_PointLightInnerRadius: 0
   m_PointLightOuterRadius: 5
   m_ShapeLightParametricSides: 5
@@ -263,7 +263,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 275281582}
   - {fileID: 1495140956}
   m_Father: {fileID: 1890781611}
   m_RootOrder: -1
@@ -628,7 +627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1761482362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,7 +675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1867502976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,6 +791,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 275281582}
   - {fileID: 500959400}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -814,6 +814,7 @@ MonoBehaviour:
   _pointer: {fileID: 6123423358172900745, guid: 624284eebe3c5d8459ada6b2a987ec40, type: 3}
   weaponParent: {fileID: 500959401}
   mover: {fileID: 1890781613}
+  lightSource: {fileID: 275281581}
 --- !u!114 &1890781613
 MonoBehaviour:
   m_ObjectHideFlags: 0

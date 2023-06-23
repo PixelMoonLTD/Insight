@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject bulletObject;
 
-    private Projectile bulletType;
 
     [SerializeField]
     private InputActionReference _movement, _attack, _pointer;
@@ -24,6 +23,9 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private PlayerMover mover;
+
+    [SerializeField]
+    private GameObject lightSource;
 
     private void OnEnable()
     {
@@ -45,7 +47,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        bulletType = bulletObject.GetComponent<Projectile>();
+        
     }
 
     private void Update()
@@ -53,6 +55,9 @@ public class Player : MonoBehaviour
         pointerInput = GetPointerPosition();
 
         weaponParent.PointerPos = pointerInput;
+
+        Vector2 direction = (pointerInput - (Vector2)lightSource.transform.position).normalized;
+        lightSource.transform.up = direction;
 
         movementInput = _movement.action.ReadValue<Vector2>();
 
