@@ -17,4 +17,6 @@
         /// </summary>
         public void TakeDamage(int amount);
     }
+
+    
 }

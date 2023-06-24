@@ -7,8 +7,11 @@ namespace Enemies.Scripts
     /// <summary>
     /// Base class that all enemies should inherit methods and functionality from. 
     /// </summary>
-    public abstract class Enemy : MonoBehaviour, IDamageable
+    public abstract class Enemy : MonoBehaviour, IDamageable, IDamageType
     {
+        [SerializeField]
+        protected IDamageType.DamageType damageType = IDamageType.DamageType.NONE;
+
         public int CurrentHealth { get; set; }
         
         [SerializeField] private EnemyData enemyData;

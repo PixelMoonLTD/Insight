@@ -612,8 +612,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 1761482362}
-  amountToSpawn: 10
-  spawnRate: 10
+  amountToSpawn: 1
+  spawnRate: 15
 --- !u!4 &1867502977
 Transform:
   m_ObjectHideFlags: 0
@@ -730,7 +730,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c797b28b2d2a982449cc89c0278dd5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletObject: {fileID: 3789277746024473864, guid: 14a4d75ac2fde5e40ae59aa9d8f98022, type: 3}
+  bulletObject:
+  - {fileID: 3789277746024473864, guid: 14a4d75ac2fde5e40ae59aa9d8f98022, type: 3}
+  - {fileID: 3789277746024473864, guid: c768f6b7bffd4f0458d1cf6ea2fd73ca, type: 3}
+  - {fileID: 3789277746024473864, guid: 3bc1ade484c452341be9077a2926b530, type: 3}
   _movement: {fileID: 8823521009187260963, guid: 624284eebe3c5d8459ada6b2a987ec40, type: 3}
   _attack: {fileID: 3630575276741565103, guid: 624284eebe3c5d8459ada6b2a987ec40, type: 3}
   _pointer: {fileID: 6123423358172900745, guid: 624284eebe3c5d8459ada6b2a987ec40, type: 3}

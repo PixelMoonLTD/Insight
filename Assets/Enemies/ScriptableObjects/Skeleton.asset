@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Skeleton
   m_EditorClassIdentifier: 
   enemyName: Skeleton
-  enemyDescription: 
-  enemyPrefab: {fileID: 0}
+  enemyDescription: Generic enemy, weak to all types of damage.
+  enemyPrefab: {fileID: 4646882661447884403, guid: 16e510c25149daf44a85f5b65641587d, type: 3}
   health: 100
   damage: 50
   speed: 1
