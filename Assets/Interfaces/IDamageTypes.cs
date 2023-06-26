@@ -1,3 +1,4 @@
+
 namespace Interfaces
 {
     public interface IDamageType

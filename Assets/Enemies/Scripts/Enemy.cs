@@ -12,6 +12,8 @@ namespace Enemies.Scripts
         [SerializeField]
         protected IDamageType.DamageType damageType = IDamageType.DamageType.NONE;
 
+        public IDamageType.DamageType[] weaknesses;
+
         public int CurrentHealth { get; set; }
         
         [SerializeField] private EnemyData enemyData;
