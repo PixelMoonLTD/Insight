@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enemies.Scripts;
+using Interfaces;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     private Vector2 movementInput;
 
@@ -13,7 +15,6 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private GameObject bulletObject;
-
 
     [SerializeField]
     private InputActionReference _movement, _attack, _pointer;
@@ -26,6 +27,13 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private GameObject lightSource;
+
+    [SerializeField]
+    private Light2D lightComponent;
+
+    private int health = 500;
+
+    public int CurrentHealth { get; set; }
 
     private void OnEnable()
     {
@@ -47,7 +55,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        
+        lightComponent.intensity = 15;
+        CurrentHealth = health;
     }
 
     private void Update()
@@ -62,6 +71,16 @@ public class Player : MonoBehaviour
         movementInput = _movement.action.ReadValue<Vector2>();
 
         mover._movementInput = movementInput;
+
+        lightComponent.intensity = (CurrentHealth / (float)health) * 15;
+
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            TakeDamage(100);
+            //Debug.Log(CurrentHealth);
+        }
+#endif
     }
 
     private Vector2 GetPointerPosition()
@@ -69,5 +88,15 @@ public class Player : MonoBehaviour
         Vector3 mousePos = _pointer.action.ReadValue<Vector2>();
         mousePos.z = Camera.main.nearClipPlane;
         return Camera.main.ScreenToWorldPoint(mousePos);
+    }
+
+    public void TakeDamage(int amount)
+    {
+        CurrentHealth -= amount;
+
+        if(CurrentHealth <= 200)
+        {
+            lightComponent.color = new Color((255 - CurrentHealth), 0, 0, .05f);
+        }
     }
 }
