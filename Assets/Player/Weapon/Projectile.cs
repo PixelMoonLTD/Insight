@@ -6,7 +6,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour, IDamageType
 {
     [SerializeField]
-    IDamageType.DamageType damageType = IDamageType.DamageType.NONE;
+    IDamageType.DamageType damageType;
 
     Rigidbody2D rb2d;
 
@@ -51,16 +51,14 @@ public class Projectile : MonoBehaviour, IDamageType
         {
             float damage_calc = 0f;
 
-            damage_calc = ((damage * speed) + elementalDamage) / 75;
+            damage_calc = ((damage * speed) + elementalDamage) / 85;
 
-            for (int i = 0; i < collision.gameObject.GetComponent<Enemies.Scripts.Enemy>().weaknesses.Length - 1; i++)
+            if(checkWeakness(collision.gameObject.GetComponent<Enemies.Scripts.Enemy>().weaknesses))
             {
-                if (damageType == collision.gameObject.GetComponent<Enemies.Scripts.Enemy>().weaknesses[i])
-                {
-                    damage_calc *= 2; ///can convert to a variable so multiplier can be an attribute/upgradable stat
-                    break;
-                }
+                Debug.Log("Super effective");
+                damage_calc *= 2;
             }
+
 
             //collision.gameObject.transform.position = Vector3.Lerp(collision.gameObject.transform.position, collision.gameObject.transform.position + (Vector3)rb2d.velocity, .5f);
             Debug.Log(damage_calc);
@@ -68,5 +66,10 @@ public class Projectile : MonoBehaviour, IDamageType
 
             Destroy(gameObject);
         }
+    }
+
+    bool checkWeakness(IDamageType.DamageType incomingDamage)
+    {
+        return (damageType & incomingDamage) != 0;
     }
 }

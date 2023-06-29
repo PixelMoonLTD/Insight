@@ -68,6 +68,10 @@ public class Player : MonoBehaviour, IDamageable
         {
             selectedBullet = bulletObject[2];
         }
+        if(Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            selectedBullet = bulletObject[3];
+        }
 #endif
         pointerInput = GetPointerPosition();
 

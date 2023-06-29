@@ -10,9 +10,9 @@ namespace Enemies.Scripts
     public abstract class Enemy : MonoBehaviour, IDamageable, IDamageType
     {
         [SerializeField]
-        protected IDamageType.DamageType damageType = IDamageType.DamageType.NONE;
+        protected IDamageType.DamageType damageType;
 
-        public IDamageType.DamageType[] weaknesses;
+        public IDamageType.DamageType weaknesses;
 
         public int CurrentHealth { get; set; }
         
