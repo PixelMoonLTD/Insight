@@ -33,6 +33,10 @@ public class Player : MonoBehaviour, IDamageable
 
     private int health = 500;
 
+    float maxTargetInten;
+    float minTargetInten;
+    float targetInten;
+
     public int CurrentHealth { get; set; }
 
     private void OnEnable()
@@ -57,6 +61,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         lightComponent.intensity = 15;
         CurrentHealth = health;
+        targetInten = minTargetInten;
     }
 
     private void Update()
@@ -72,12 +77,26 @@ public class Player : MonoBehaviour, IDamageable
 
         mover._movementInput = movementInput;
 
-        lightComponent.intensity = (CurrentHealth / (float)health) * 15;
+        if (CurrentHealth <= 100 && CurrentHealth > 0)
+        {
+            if (isApproximate(lightComponent.intensity, maxTargetInten, 0.1f))
+            {
+                targetInten = minTargetInten;
+            }
+
+            if (isApproximate(lightComponent.intensity, minTargetInten, 0.1f))
+            {
+                targetInten = maxTargetInten;
+            }
+
+            lightComponent.intensity = Mathf.Lerp(lightComponent.intensity, targetInten, 1.5f * Time.deltaTime);
+        }
+
 
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.KeypadMinus))
         {
-            TakeDamage(100);
+            TakeDamage(50);
             //Debug.Log(CurrentHealth);
         }
 #endif
@@ -94,9 +113,18 @@ public class Player : MonoBehaviour, IDamageable
     {
         CurrentHealth -= amount;
 
-        if(CurrentHealth <= 200)
+        lightComponent.intensity = (CurrentHealth / (float)health) * 15;
+        maxTargetInten = lightComponent.intensity + 1.5f;
+        minTargetInten = lightComponent.intensity - 1.5f;
+
+        if (CurrentHealth <= 200)
         {
             lightComponent.color = new Color((255 - CurrentHealth), 0, 0, .05f);
         }
+    }
+
+    bool isApproximate(float a, float b, float tolerance)
+    {
+        return Mathf.Abs(a - b) < tolerance;
     }
 }
