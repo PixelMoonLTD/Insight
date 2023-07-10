@@ -2,28 +2,19 @@
 
 namespace Enemies.Scripts
 {
-    [RequireComponent(typeof(Enemy))]
     public class EnemyMovement : MonoBehaviour
     {
-        private EnemyData _enemyData;
+        [SerializeField] private EnemyData enemyData;
         private Transform _target;
 
-        private void Awake() => _enemyData = GetComponent<Enemy>().Data;
+        private void Awake() => _target = GameObject.FindWithTag("Player").transform; // TODO: Clean
 
         private void Update()
         {
             if (_target == null)
                 return;
 
-            transform.position = Vector2.MoveTowards(transform.position, _target.position, _enemyData.speed * Time.deltaTime);
-        }
-
-        private void OnTriggerEnter2D(Collider2D col)
-        {
-            if (col.gameObject.CompareTag("Player"))
-            {
-                _target = col.transform;
-            }
+            transform.position = Vector2.MoveTowards(transform.position, _target.position, enemyData.speed * Time.deltaTime);
         }
     }
 }
