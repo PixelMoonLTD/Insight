@@ -4,6 +4,7 @@ using UnityEngine.Pool;
 
 namespace Enemies.Scripts
 {
+
     /// <summary>
     /// Base class that all enemies should inherit methods and functionality from. 
     /// </summary>
@@ -15,8 +16,10 @@ namespace Enemies.Scripts
         public IDamageType.DamageType weaknesses;
 
         public int CurrentHealth { get; set; }
+        public EnemyData Data => enemyData;
         
         [SerializeField] private EnemyData enemyData;
+        [SerializeField] private GameObject damagePopupPrefab;
         private IObjectPool<Enemy> _pool;
         
         /// <summary>
@@ -36,17 +39,19 @@ namespace Enemies.Scripts
         public void TakeDamage(int amount)
         {
             CurrentHealth -= amount;
+            var go = Instantiate(damagePopupPrefab, transform.position, Quaternion.identity);
+            go.GetComponent<DamagePopup>().SetDamageText(amount);
 
             if (CurrentHealth <= 0)
                 Die();
         }
         
-        protected virtual void ResetEnemy()
+        private void ResetEnemy()
         {
             CurrentHealth = enemyData.health;
         }
 
-        protected virtual void Die()
+        private void Die()
         {
             ReturnToPool();
         }
