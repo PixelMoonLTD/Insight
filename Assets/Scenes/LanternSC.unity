@@ -180,7 +180,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1264550459}
   - component: {fileID: 1264550458}
-  - component: {fileID: 1264550460}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -255,21 +254,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1264550460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1264550457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8593712522711b843bd92ec9be320afa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPool: {fileID: 0}
-  amountToSpawn: 2
-  spawnRate: 1
 --- !u!1 &1495140955
 GameObject:
   m_ObjectHideFlags: 0

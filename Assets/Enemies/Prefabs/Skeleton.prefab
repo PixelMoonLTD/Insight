@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4646882661447884404}
   - component: {fileID: 4646882661447884406}
   - component: {fileID: 6664839017526542441}
-  - component: {fileID: 7945004249850760444}
+  - component: {fileID: 8402027603779400276}
   - component: {fileID: 4646882661447884408}
   m_Layer: 0
   m_Name: Skeleton
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4646882661447884404
 SpriteRenderer:
@@ -120,7 +120,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 10
---- !u!114 &7945004249850760444
+--- !u!114 &8402027603779400276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,11 +129,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4646882661447884403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d67b5ed905b4d4c96bbc86320245921, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ed396cdd77f488aa89927bb67b3ee15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damageType: 0
-  weaknesses: 3
+  weaknesses: 5
   enemyData: {fileID: 11400000, guid: 14c56e799f02c7145a140d7882223021, type: 2}
   damagePopupPrefab: {fileID: 4661941200790525902, guid: 30b53f9546388354a9a92d5b50210e25, type: 3}
 --- !u!114 &4646882661447884408
@@ -148,4 +148,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d637e8b83e544c7af37653938c18c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 14c56e799f02c7145a140d7882223021, type: 2}
