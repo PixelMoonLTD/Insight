@@ -28,6 +28,8 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField]
     private PlayerMover mover;
 
+    /*private Light2D;*/
+
     public int CurrentHealth { get; set; }
 
     private void OnEnable()
