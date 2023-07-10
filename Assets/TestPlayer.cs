@@ -1,5 +1,6 @@
 using Interfaces;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// TEMPORARY player class for testing enemy functionality with
@@ -7,8 +8,10 @@ using UnityEngine;
 public class TestPlayer : MonoBehaviour, IDamageable
 {
     public int CurrentHealth { get; set; }
-    private const int Damage = 100;
-    
+    private int _damage;
+
+    private void Start() => _damage = Random.Range(50, 101);
+
     public void TakeDamage(int amount)
     {
         CurrentHealth -= amount;
@@ -16,10 +19,10 @@ public class TestPlayer : MonoBehaviour, IDamageable
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        IDamageable hit = col.gameObject.GetComponent<IDamageable>();
-        if (hit != null)
+        if (col.gameObject.TryGetComponent(out IDamageable damageable))
         {
-            hit.TakeDamage(Damage);
+            _damage = Random.Range(50, 101);
+            damageable.TakeDamage(_damage);
         }
     }
 }
