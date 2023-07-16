@@ -8,10 +8,10 @@ namespace Enemies.Scripts
     /// <summary>
     /// Base class that all enemies should inherit methods and functionality from. 
     /// </summary>
-    public abstract class Enemy : MonoBehaviour, IDamageable, IDamageType
+    public class Enemy : MonoBehaviour, IDamageable, IDamageType
     {
         [SerializeField]
-        protected IDamageType.DamageType damageType;
+        IDamageType.DamageType damageType;
 
         public IDamageType.DamageType weaknesses;
 
@@ -53,6 +53,8 @@ namespace Enemies.Scripts
 
         private void Die()
         {
+            GameManager.instance.UpdateSlider(.05f);
+
             ReturnToPool();
         }
 

@@ -8,7 +8,7 @@ public class PlayerMover : MonoBehaviour
     private Rigidbody2D rb2d;
 
     [SerializeField]
-    private float maxSpeed = 4, acceleration = 10, decceleration = 20;
+    private float maxSpeed = 10, acceleration = 10, decceleration = 20;
 
     private float currentSpeed = 0;
 

@@ -59,9 +59,6 @@ public class Projectile : MonoBehaviour, IDamageType
                 damage_calc *= 2;
             }
 
-
-            //collision.gameObject.transform.position = Vector3.Lerp(collision.gameObject.transform.position, collision.gameObject.transform.position + (Vector3)rb2d.velocity, .5f);
-            Debug.Log(damage_calc);
             collision.gameObject.GetComponent<Enemies.Scripts.Enemy>().TakeDamage((int)damage_calc);
 
             Destroy(gameObject);
