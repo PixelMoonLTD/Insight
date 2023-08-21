@@ -9,7 +9,8 @@ public enum UpgradeType
     WEAPONUNLOCK,
     POWERUNLOCK,
     POWERBUFF,
-    WEAPONBUFF
+    WEAPONBUFF,
+    BULLETCHANGE
 }
 
 [CreateAssetMenu(menuName = "Custom/Upgrades/Upgrade Data", fileName = "NewUpgrade")]

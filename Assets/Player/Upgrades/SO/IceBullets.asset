@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60892802722e714e819bb061e1243bf, type: 3}
   m_Name: IceBullets
   m_EditorClassIdentifier: 
-  upgrade: 1
+  upgrade: 5
   upgradeName: Ice Bullets
   icon: {fileID: 21300000, guid: 713f288c6a6fc4514a9403f26e82dc91, type: 3}

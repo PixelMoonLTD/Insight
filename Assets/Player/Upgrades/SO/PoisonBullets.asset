@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f60892802722e714e819bb061e1243bf, type: 3}
-  m_Name: FireBullets
+  m_Name: PoisonBullets
   m_EditorClassIdentifier: 
   upgrade: 5
-  upgradeName: FireBullets
-  icon: {fileID: 21300000, guid: fad537f7b1df74e869915bbab4356a0f, type: 3}
+  upgradeName: Poison Bullets
+  icon: {fileID: 21300000, guid: 5caee0ba7342b4b2cacdbe0e6030c7b0, type: 3}

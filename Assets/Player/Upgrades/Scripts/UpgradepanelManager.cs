@@ -27,6 +27,16 @@ public class UpgradepanelManager : MonoBehaviour
         panel.SetActive(true);
     }
 
+    public void SelectUprade(int pressedButtonID)
+    {
+        //apply upgrade
+
+        if(buttons[pressedButtonID])
+        {
+
+        }
+    }    
+
     public void ClosePanel()
     {
         pause.UnpauseGame();
