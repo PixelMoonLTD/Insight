@@ -59,7 +59,7 @@ namespace Enemies.Scripts
 
         private void Die()
         {
-            GameManager.instance.UpdateSlider(.05f);
+            GameManager.instance.player.GetComponent<LevelUp>().UpdateSlider(.05f);
 
             ReturnToPool();
         }

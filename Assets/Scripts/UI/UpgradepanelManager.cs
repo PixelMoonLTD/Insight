@@ -30,7 +30,7 @@ public class UpgradepanelManager : MonoBehaviour
     public void SelectUprade(int pressedButtonID)
     {
         //apply upgrade
-        GameManager.instance.Upgrade(pressedButtonID);
+        GameManager.instance.player.GetComponent<LevelUp>().Upgrade(pressedButtonID);
 
         ClosePanel();
     }    

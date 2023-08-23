@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageType: 1
-  damage: 15
+  damage: 20
   elementalDamage: 15
   speed: 350
 --- !u!50 &1007579239901184684

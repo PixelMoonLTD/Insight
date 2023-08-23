@@ -11,13 +11,15 @@ public class Projectile : MonoBehaviour, IDamageType
     Rigidbody2D rb2d;
 
     [SerializeField]
-    float damage = 10f;
+    float damage = 20f;
 
     [SerializeField]
     float elementalDamage = 0f;
 
     [SerializeField]
     float speed = 5f;
+
+    int critical_threshold = 60;
 
     Vector2 shootDir = new Vector2();
 
@@ -53,14 +55,14 @@ public class Projectile : MonoBehaviour, IDamageType
 
             float damage_calc = 0f;
 
-            damage_calc = ((damage * speed) + elementalDamage) / 85;
+            damage_calc = ((damage * speed/3) + elementalDamage) / 85;
 
             if(checkWeakness(collision.gameObject.GetComponent<Enemies.Scripts.Enemy>().weaknesses))
             {
                 damage_calc *= 2;
             }
 
-            if(rand >= 60)
+            if(rand >= critical_threshold)
             {
                 damage_calc *= 1.5f;
                 collision.gameObject.GetComponent<Enemies.Scripts.Enemy>().CallCriticalText();
