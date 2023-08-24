@@ -38,6 +38,23 @@ public class LevelUp : MonoBehaviour
 
         if (acquiredUpgrades == null) { acquiredUpgrades = new List<UpgradeData>(); }
 
+        switch (upgradeData.upgradeType)
+        {
+            case UpgradeType.STATBUFF:
+                gameObject.GetComponent<Player>().IncreasePlayerStat(GetComponent<Player>().GetStats(), upgradeData.tier);
+                break;
+            case UpgradeType.FIREPATTERN:
+                break;
+            case UpgradeType.POWERUNLOCK:
+                break;
+            case UpgradeType.POWERBUFF:
+                break;
+            case UpgradeType.WEAPONBUFF:
+                break;
+            case UpgradeType.BULLETCHANGE:
+                break;
+        }
+
         //change out for the inventory system vlad will implement I think?
         //also need to move upgrade stuff off game manager and onto player
         acquiredUpgrades.Add(upgradeData);

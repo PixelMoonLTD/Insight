@@ -5781,7 +5781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 1761482362}
-  amountToSpawn: 20
+  amountToSpawn: 5
   spawnRate: 8
   spawnCap: 50
 --- !u!4 &1867502977
@@ -5902,6 +5902,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c797b28b2d2a982449cc89c0278dd5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+    max_health: 100
+    fire_rate: 4
+    movement_speed: 10
+    critical_rate: 3
   bar: {fileID: 1633556960}
   bulletObject:
   - {fileID: 3789277746024473864, guid: 14a4d75ac2fde5e40ae59aa9d8f98022, type: 3}
@@ -5985,6 +5990,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f0741325b32497c43ad466265426a741, type: 2}
   - {fileID: 11400000, guid: 8623a3f9093e8fc448040123b2699d41, type: 2}
   - {fileID: 11400000, guid: c36455ddb46e1b645b5c728b528a4482, type: 2}
+  - {fileID: 11400000, guid: d8276b6447396af439a584cfeca0ed56, type: 2}
+  - {fileID: 11400000, guid: 632386f27ac8e964b9683a4dc846673f, type: 2}
+  - {fileID: 11400000, guid: 144afc0714e2a5045a1be4512b485f77, type: 2}
 --- !u!1 &1946594001
 GameObject:
   m_ObjectHideFlags: 0

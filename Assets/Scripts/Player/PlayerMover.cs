@@ -7,8 +7,8 @@ public class PlayerMover : MonoBehaviour
 {
     private Rigidbody2D rb2d;
 
-    [SerializeField]
-    private float maxSpeed = 10, acceleration = 10, decceleration = 20;
+    
+    private float maxSpeed, acceleration = 10, decceleration = 20;
 
     private float currentSpeed = 0;
 
@@ -17,6 +17,7 @@ public class PlayerMover : MonoBehaviour
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        maxSpeed = GetComponent<Player>().GetStats().movement_speed;
     }
 
     private void FixedUpdate()

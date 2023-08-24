@@ -13,7 +13,7 @@ public enum UpgradeType
     BULLETCHANGE
 }
 
-public enum UpgraedeTier
+public enum UpgradeTier
 {
     COMMON,
     RARE,
@@ -25,7 +25,7 @@ public class UpgradeData : ScriptableObject
 {
     [Header("Upgrade Type")]
     public UpgradeType upgradeType;
-    public UpgraedeTier tier;
+    public UpgradeTier tier;
     public bool permanent;
     [Header("Upgrade Attributes")]
     public string upgradeName;

@@ -9,9 +9,11 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour, IDamageable
 {
+    [Header("STATS")]
     [SerializeField]
     PlayerStats stats;
 
+    [Header("UI")]
     [SerializeField]
     Slider bar;
 
@@ -19,6 +21,7 @@ public class Player : MonoBehaviour, IDamageable
 
     private Vector2 pointerInput;
 
+    [Header("Variables")]
     [SerializeField]
     private GameObject[] bulletObject;
 
@@ -35,7 +38,7 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField]
     private PlayerMover mover;
 
-    private float fire_rate = 2f;
+    private float fire_rate;
 
     /*private Light2D;*/
 
@@ -45,9 +48,11 @@ public class Player : MonoBehaviour, IDamageable
     private void Start()
     {
         health = stats.max_health;
+        fire_rate = 12/stats.fire_rate;
 
         selectedBullet = bulletObject[0];
 
+        bar.maxValue = fire_rate;
         bar.value = 0;
     }
 
@@ -88,7 +93,7 @@ public class Player : MonoBehaviour, IDamageable
             ///add fire rate limiter
             GameObject bullet = Instantiate(selectedBullet, weaponParent.weaponPos.transform.position, Quaternion.identity);
             bullet.GetComponent<Projectile>().SetShootDirection(transform.position, pointerInput);
-            fire_rate = 2.0f;
+            fire_rate = 12 / stats.fire_rate;
             bar.value = 0;
         }
 
@@ -104,5 +109,39 @@ public class Player : MonoBehaviour, IDamageable
     public void TakeDamage(int amount)
     {
         health -= amount;
+    }
+
+    public void IncreaseMaxHealth(int amount)
+    {
+        stats.max_health += stats.max_health * amount;
+    }
+
+    public void IncreaseFireRate()
+    {
+        stats.fire_rate += 2;
+        bar.maxValue = 12 / stats.fire_rate;
+    }
+
+    //need to change so it knows what stat is being passed in
+    public void IncreasePlayerStat(PlayerStats stat, UpgradeTier tier)
+    {
+        switch (tier)
+        {
+            case UpgradeTier.COMMON:
+                stat.fire_rate = stat.fire_rate * 1.01f;
+                break;
+            case UpgradeTier.RARE:
+                stat.fire_rate = stat.fire_rate * 1.025f;
+                break;
+            case UpgradeTier.LEGENDARY:
+                stat.fire_rate = stat.fire_rate * 1.04f;
+                break;
+        }
+        Debug.Log(stat.fire_rate);
+    }
+
+    public PlayerStats GetStats()
+    {
+        return stats;
     }
 }

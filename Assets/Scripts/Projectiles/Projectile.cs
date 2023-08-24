@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour, IDamageType
     [SerializeField]
     float speed = 5f;
 
-    int critical_threshold = 60;
+    int critical_threshold;
 
     Vector2 shootDir = new Vector2();
 
@@ -33,6 +33,8 @@ public class Projectile : MonoBehaviour, IDamageType
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+
+        critical_threshold = GameManager.instance.player.GetComponent<Player>().GetStats().critical_rate;
 
         Destroy(gameObject, 3.5f);
     }
@@ -62,7 +64,7 @@ public class Projectile : MonoBehaviour, IDamageType
                 damage_calc *= 2;
             }
 
-            if(rand >= critical_threshold)
+            if(rand <= critical_threshold)
             {
                 damage_calc *= 1.5f;
                 collision.gameObject.GetComponent<Enemies.Scripts.Enemy>().CallCriticalText();
