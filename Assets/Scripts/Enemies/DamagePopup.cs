@@ -8,7 +8,7 @@ public class DamagePopup : MonoBehaviour
     
     private void Start()
     {
-        _randomSpawnPos = (Vector2)transform.position * Random.Range(0.5f, 1.5f);
+        _randomSpawnPos = (Vector2)transform.position * Random.Range(0.89f, 1.11f);
         transform.position = _randomSpawnPos;
         Destroy(gameObject, 1f);
     }
@@ -25,11 +25,17 @@ public class DamagePopup : MonoBehaviour
 
         switch (amount)
         {
-            case >= 50 and < 75:
+            case >= 10 and < 26:
                 tmpText.color = Color.yellow;
                 break;
-            case >= 75 and < 90:
-                tmpText.color = new Color(1, 0.5f, 0);
+            case >= 26 and < 40:
+                tmpText.color = new Color(1, 0.7f, 0.12f);
+                break;
+            case >= 40 and < 64:
+                tmpText.color = new Color(1, 0.4f, 0.07f);
+                break;
+            case >= 64 and < 82:
+                tmpText.color = new Color(1, 0.1f, 0);
                 break;
             default:
                 tmpText.color = Color.red;

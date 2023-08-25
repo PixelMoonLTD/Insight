@@ -57,7 +57,7 @@ public class Projectile : MonoBehaviour, IDamageType
 
             float damage_calc = 0f;
 
-            damage_calc = ((damage * speed/3) + elementalDamage) / 85;
+            damage_calc = ((damage * (2 *speed/5)) + elementalDamage) / 85;
 
             if(checkWeakness(collision.gameObject.GetComponent<Enemies.Scripts.Enemy>().weaknesses))
             {

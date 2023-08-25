@@ -119,7 +119,7 @@ public class Player : MonoBehaviour, IDamageable
     public void IncreaseFireRate()
     {
         stats.fire_rate += 2;
-        bar.maxValue = 12 / stats.fire_rate;
+        
     }
 
     //need to change so it knows what stat is being passed in
@@ -137,7 +137,7 @@ public class Player : MonoBehaviour, IDamageable
                 stat.fire_rate = stat.fire_rate * 1.04f;
                 break;
         }
-        Debug.Log(stat.fire_rate);
+        bar.maxValue = 12 / stats.fire_rate;
     }
 
     public PlayerStats GetStats()
