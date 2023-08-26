@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60892802722e714e819bb061e1243bf, type: 3}
   m_Name: MoveSpeedUp
   m_EditorClassIdentifier: 
-  upgrade: 0
+  upgradeType: 0
   tier: 0
   permanent: 0
   upgradeName: Movement speed up
+  description: 
   icon: {fileID: 21300000, guid: fa557b89ecf3d44f2b6cae783ce09806, type: 3}
   stackable: 1
+  BulletID: 0
+  newStats:
+    max_health: 0
+    fire_rate: 1
+    movement_speed: 1.1
+    critical_rate: 0

@@ -34,4 +34,8 @@ public class UpgradeData : ScriptableObject
     public Sprite icon;
     public bool stackable;
 
+    [Header("UpgradeDetails")]
+    public int BulletID;
+    public PlayerStats newStats;
+
 }

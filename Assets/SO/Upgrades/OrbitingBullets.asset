@@ -16,5 +16,12 @@ MonoBehaviour:
   tier: 2
   permanent: 0
   upgradeName: Orbit Shot
+  description: 
   icon: {fileID: 0}
   stackable: 0
+  BulletID: 0
+  newStats:
+    max_health: 0
+    fire_rate: 0
+    movement_speed: 0
+    critical_rate: 0

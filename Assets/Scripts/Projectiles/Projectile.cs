@@ -53,7 +53,7 @@ public class Projectile : MonoBehaviour, IDamageType
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            float rand = Random.Range(1, 64);
+            float rand = Random.Range(1, 128);
 
             float damage_calc = 0f;
 

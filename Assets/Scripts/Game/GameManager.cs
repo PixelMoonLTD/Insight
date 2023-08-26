@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject player;
 
-    //float currentSliderSpeed = 0;
+    public StatSpread spread;
 
     void Awake()
     {

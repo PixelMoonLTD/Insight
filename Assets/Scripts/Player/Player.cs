@@ -48,7 +48,7 @@ public class Player : MonoBehaviour, IDamageable
     private void Start()
     {
         health = stats.max_health;
-        fire_rate = 12/stats.fire_rate;
+        fire_rate = 16/stats.fire_rate;
 
         selectedBullet = bulletObject[0];
 
@@ -61,24 +61,6 @@ public class Player : MonoBehaviour, IDamageable
         fire_rate -= Time.deltaTime;
         bar.value += Time.deltaTime;
 
-#if UNITY_EDITOR
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            selectedBullet = bulletObject[0];
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            selectedBullet = bulletObject[1];
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            selectedBullet = bulletObject[2];
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            selectedBullet = bulletObject[3];
-        }
-#endif
         pointerInput = GetPointerPosition();
 
         weaponParent.PointerPos = pointerInput;
@@ -93,7 +75,7 @@ public class Player : MonoBehaviour, IDamageable
             ///add fire rate limiter
             GameObject bullet = Instantiate(selectedBullet, weaponParent.weaponPos.transform.position, Quaternion.identity);
             bullet.GetComponent<Projectile>().SetShootDirection(transform.position, pointerInput);
-            fire_rate = 12 / stats.fire_rate;
+            fire_rate = 16 / stats.fire_rate;
             bar.value = 0;
         }
 
@@ -111,33 +93,21 @@ public class Player : MonoBehaviour, IDamageable
         health -= amount;
     }
 
-    public void IncreaseMaxHealth(int amount)
-    {
-        stats.max_health += stats.max_health * amount;
-    }
-
-    public void IncreaseFireRate()
-    {
-        stats.fire_rate += 2;
-        
-    }
-
     //need to change so it knows what stat is being passed in
-    public void IncreasePlayerStat(PlayerStats stat, UpgradeTier tier)
+    public void IncreasePlayerStat(PlayerStats stat)
     {
-        switch (tier)
-        {
-            case UpgradeTier.COMMON:
-                stat.fire_rate = stat.fire_rate * 1.01f;
-                break;
-            case UpgradeTier.RARE:
-                stat.fire_rate = stat.fire_rate * 1.025f;
-                break;
-            case UpgradeTier.LEGENDARY:
-                stat.fire_rate = stat.fire_rate * 1.04f;
-                break;
-        }
-        bar.maxValue = 12 / stats.fire_rate;
+        //+= for ones that are int, *= for those that are floats (standard increase vs % increase)
+        stats.max_health += stat.max_health;
+        stats.fire_rate *= stat.fire_rate;
+        stats.movement_speed *= stat.movement_speed;
+        stats.critical_rate += stat.critical_rate;
+             
+        bar.maxValue = 16 / stats.fire_rate;
+    }
+
+    public void ChangeBulletType(int bulletID)
+    {
+        selectedBullet = bulletObject[bulletID];
     }
 
     public PlayerStats GetStats()

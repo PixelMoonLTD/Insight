@@ -16,6 +16,12 @@ MonoBehaviour:
   tier: 1
   permanent: 0
   upgradeName: Fire rate up
-  description: Increases fire rate by 2.5%
+  description: Increases fire rate by 10%
   icon: {fileID: 21300000, guid: 6e2a81314a40c43849866fb7490cb521, type: 3}
   stackable: 1
+  BulletID: 0
+  newStats:
+    max_health: 0
+    fire_rate: 1.1
+    movement_speed: 1
+    critical_rate: 0

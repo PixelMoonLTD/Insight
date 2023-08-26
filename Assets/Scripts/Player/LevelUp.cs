@@ -38,10 +38,12 @@ public class LevelUp : MonoBehaviour
 
         if (acquiredUpgrades == null) { acquiredUpgrades = new List<UpgradeData>(); }
 
+        acquiredUpgrades.Add(upgradeData);
+        
         switch (upgradeData.upgradeType)
         {
             case UpgradeType.STATBUFF:
-                gameObject.GetComponent<Player>().IncreasePlayerStat(GetComponent<Player>().GetStats(), upgradeData.tier);
+                gameObject.GetComponent<Player>().IncreasePlayerStat(upgradeData.newStats);
                 break;
             case UpgradeType.FIREPATTERN:
                 break;
@@ -52,18 +54,14 @@ public class LevelUp : MonoBehaviour
             case UpgradeType.WEAPONBUFF:
                 break;
             case UpgradeType.BULLETCHANGE:
+                GetComponent<Player>().ChangeBulletType(upgradeData.BulletID);
+                allUpgrades.RemoveAll(item => item.upgradeType == UpgradeType.BULLETCHANGE);
                 break;
         }
 
         //change out for the inventory system vlad will implement I think?
         //also need to move upgrade stuff off game manager and onto player
-        acquiredUpgrades.Add(upgradeData);
-
-        if (upgradeData.upgradeType == UpgradeType.BULLETCHANGE)
-        {
-
-            allUpgrades.RemoveAll(item => item.upgradeType == UpgradeType.BULLETCHANGE);
-        }
+        
 
         if (!upgradeData.stackable)
         {
@@ -76,7 +74,7 @@ public class LevelUp : MonoBehaviour
 
     public void ResetSlider()
     {
-        LevelUpSlider.maxValue = LevelUpSlider.value + 0.5f;
+        LevelUpSlider.maxValue = LevelUpSlider.value + 0.25f;
         LevelUpSlider.value = 0;
 
         if (availableUpgrades == null) { availableUpgrades = new List<UpgradeData>(); }

@@ -16,5 +16,12 @@ MonoBehaviour:
   tier: 1
   permanent: 0
   upgradeName: Health Up
+  description: 
   icon: {fileID: 0}
   stackable: 1
+  BulletID: 0
+  newStats:
+    max_health: 15
+    fire_rate: 1
+    movement_speed: 1
+    critical_rate: 0

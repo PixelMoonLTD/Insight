@@ -19,3 +19,9 @@ MonoBehaviour:
   description: Acquire an evasive dash move.
   icon: {fileID: 21300000, guid: 3d9fb59c1fa00406ab971588842aa368, type: 3}
   stackable: 0
+  BulletID: 0
+  newStats:
+    max_health: 0
+    fire_rate: 0
+    movement_speed: 0
+    critical_rate: 0
