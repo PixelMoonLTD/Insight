@@ -54,7 +54,7 @@ public class LevelUp : MonoBehaviour
             case UpgradeType.WEAPONBUFF:
                 break;
             case UpgradeType.BULLETCHANGE:
-                GetComponent<Player>().ChangeBulletType(upgradeData.BulletID);
+                GetComponent<Player>().ChangeBulletType(upgradeData.BulletObj);
                 allUpgrades.RemoveAll(item => item.upgradeType == UpgradeType.BULLETCHANGE);
                 break;
         }

@@ -35,7 +35,7 @@ public class UpgradeData : ScriptableObject
     public bool stackable;
 
     [Header("UpgradeDetails")]
-    public int BulletID;
+    public GameObject BulletObj;
     public PlayerStats newStats;
 
 }

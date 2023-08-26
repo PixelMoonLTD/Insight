@@ -11,3 +11,9 @@ public struct PlayerStats
 }
 
 
+[System.Serializable]
+public struct LanternStats
+{
+
+}
+

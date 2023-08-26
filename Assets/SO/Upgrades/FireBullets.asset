@@ -19,7 +19,7 @@ MonoBehaviour:
   description: 
   icon: {fileID: 21300000, guid: fad537f7b1df74e869915bbab4356a0f, type: 3}
   stackable: 0
-  BulletID: 1
+  BulletObj: {fileID: 3789277746024473864, guid: c768f6b7bffd4f0458d1cf6ea2fd73ca, type: 3}
   newStats:
     max_health: 0
     fire_rate: 0

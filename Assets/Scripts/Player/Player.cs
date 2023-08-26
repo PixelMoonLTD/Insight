@@ -22,9 +22,8 @@ public class Player : MonoBehaviour, IDamageable
     private Vector2 pointerInput;
 
     [Header("Variables")]
-    [SerializeField]
-    private GameObject[] bulletObject;
 
+    [SerializeField]
     private GameObject selectedBullet;
 
     private int health;
@@ -49,8 +48,6 @@ public class Player : MonoBehaviour, IDamageable
     {
         health = stats.max_health;
         fire_rate = 16/stats.fire_rate;
-
-        selectedBullet = bulletObject[0];
 
         bar.maxValue = fire_rate;
         bar.value = 0;
@@ -105,9 +102,9 @@ public class Player : MonoBehaviour, IDamageable
         bar.maxValue = 16 / stats.fire_rate;
     }
 
-    public void ChangeBulletType(int bulletID)
+    public void ChangeBulletType(GameObject bulletID)
     {
-        selectedBullet = bulletObject[bulletID];
+        selectedBullet = bulletID;
     }
 
     public PlayerStats GetStats()
