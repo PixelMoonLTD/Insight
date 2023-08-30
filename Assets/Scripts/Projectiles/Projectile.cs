@@ -10,14 +10,11 @@ public class Projectile : MonoBehaviour, IDamageType
 
     Rigidbody2D rb2d;
 
-    [SerializeField]
-    float damage = 20f;
+    float damage;
 
-    [SerializeField]
-    float elementalDamage = 0f;
+    int elementalDamage;
 
-    [SerializeField]
-    float speed = 5f;
+    float speed;
 
     int critical_threshold;
 
@@ -33,8 +30,11 @@ public class Projectile : MonoBehaviour, IDamageType
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-
-        critical_threshold = GameManager.instance.player.GetComponent<Player>().GetStats().critical_rate;
+        PlayerStats stats = GameManager.instance.player.GetComponent<Player>().GetStats();
+        critical_threshold = stats.critical_rate;
+        damage = stats.damage;
+        speed = stats.shoot_speed;
+        elementalDamage = stats.elemental_damage;
 
         Destroy(gameObject, 3.5f);
     }

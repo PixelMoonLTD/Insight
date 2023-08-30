@@ -75,7 +75,6 @@ public class Player : MonoBehaviour, IDamageable
             fire_rate = 16 / stats.fire_rate;
             bar.value = 0;
         }
-
     }
 
     private Vector2 GetPointerPosition()
@@ -98,6 +97,9 @@ public class Player : MonoBehaviour, IDamageable
         stats.fire_rate *= stat.fire_rate;
         stats.movement_speed *= stat.movement_speed;
         stats.critical_rate += stat.critical_rate;
+        stats.damage *= stat.damage;
+        stats.shoot_speed *= stat.shoot_speed;
+        stats.elemental_damage += stat.elemental_damage;
              
         bar.maxValue = 16 / stats.fire_rate;
     }

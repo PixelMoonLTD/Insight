@@ -17,13 +17,13 @@ public class UpgradeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     UpgradeData data_;
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(data_.upgradeType != UpgradeType.BULLETCHANGE)
+        if(data_.upgradeType == UpgradeType.STATBUFF)
             GameManager.instance.spread.ShowUpdatedStats(data_);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (data_.upgradeType != UpgradeType.BULLETCHANGE)
+        if (data_.upgradeType == UpgradeType.STATBUFF)
             GameManager.instance.spread.HideUpdatedStats();
     }
 

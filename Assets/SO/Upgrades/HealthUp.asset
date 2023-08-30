@@ -19,9 +19,11 @@ MonoBehaviour:
   description: 
   icon: {fileID: 0}
   stackable: 1
-  BulletID: 0
+  BulletObj: {fileID: 0}
   newStats:
     max_health: 15
     fire_rate: 1
     movement_speed: 1
     critical_rate: 0
+    damage: 1
+    shoot_speed: 1
