@@ -12,16 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60892802722e714e819bb061e1243bf, type: 3}
   m_Name: Dash
   m_EditorClassIdentifier: 
-  upgradeType: 2
+  upgradeType: 3
   tier: 0
   permanent: 0
   upgradeName: Dash
   description: Acquire an evasive dash move.
   icon: {fileID: 21300000, guid: 3d9fb59c1fa00406ab971588842aa368, type: 3}
   stackable: 0
-  BulletID: 0
+  BulletObj: {fileID: 0}
   newStats:
     max_health: 0
-    fire_rate: 0
     movement_speed: 0
+    fire_rate: 0
     critical_rate: 0
+    damage: 0
+    shoot_speed: 0
+    elemental_damage: 0
+  upgradeDependacies:
+  - {fileID: 11400000, guid: 2795474430ffb6e418f3471d1605b00e, type: 2}
+  - {fileID: 11400000, guid: 5ffc1703c0c53a945a134610c24c61bf, type: 2}
+  - {fileID: 11400000, guid: 10facf93b53592b40af79f11cb5fca2a, type: 2}

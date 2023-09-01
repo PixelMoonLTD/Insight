@@ -5215,7 +5215,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -6382,10 +6382,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     max_health: 100
-    movement_speed: 10
+    movement_speed: 4
     fire_rate: 4
     critical_rate: 3
-    damage: 20
+    damage: 16
     shoot_speed: 325
     elemental_damage: 0
   bar: {fileID: 1633556960}

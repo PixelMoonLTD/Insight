@@ -55,18 +55,19 @@ public class LevelUp : MonoBehaviour
                 break;
             case UpgradeType.BULLETCHANGE:
                 GetComponent<Player>().ChangeBulletType(upgradeData.BulletObj);
+                allUpgrades.AddRange(upgradeData.upgradeDependacies);
                 allUpgrades.RemoveAll(item => item.upgradeType == UpgradeType.BULLETCHANGE);
                 break;
         }
 
-        //change out for the inventory system vlad will implement I think?
-        //also need to move upgrade stuff off game manager and onto player
-        
+        //change out for the inventory system vlad will implement I think?        
 
         if (!upgradeData.stackable)
         {
             allUpgrades.Remove(upgradeData);
         }
+
+        GameManager.instance.spread.HideUpdatedStats();
 
     }
 
@@ -95,7 +96,9 @@ public class LevelUp : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            upgradeList.Add(allUpgrades[Random.Range(0, allUpgrades.Count)]);
+            int  rand = Random.Range(0, 2);
+            if((int)allUpgrades[i].tier >= rand)
+                upgradeList.Add(allUpgrades[Random.Range(0, allUpgrades.Count)]);
         }
 
         return upgradeList;

@@ -17,7 +17,7 @@ MonoBehaviour:
   permanent: 0
   upgradeName: Ice Bullets
   description: 
-  icon: {fileID: 21300000, guid: 713f288c6a6fc4514a9403f26e82dc91, type: 3}
+  icon: {fileID: 21300000, guid: 5c56a160c80ce7148997a63ce9d51e59, type: 3}
   stackable: 0
   BulletObj: {fileID: 3789277746024473864, guid: 3bc1ade484c452341be9077a2926b530, type: 3}
   newStats:
@@ -28,3 +28,5 @@ MonoBehaviour:
     damage: 0
     shoot_speed: 0
     elemental_damage: 0
+  upgradeDependacies:
+  - {fileID: 11400000, guid: 5c16ed123c51b1647a118c33edc91e99, type: 2}

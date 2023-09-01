@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f60892802722e714e819bb061e1243bf, type: 3}
-  m_Name: CritRateUpR
+  m_Name: BuffElementalDMG
   m_EditorClassIdentifier: 
   upgradeType: 0
-  tier: 1
+  tier: 0
   permanent: 0
-  upgradeName: Crit Up
-  description: 
+  upgradeName: Elemental Up
+  description: Increases elemental damage by 3 points
   icon: {fileID: 0}
   stackable: 1
   BulletObj: {fileID: 0}
@@ -24,8 +24,7 @@ MonoBehaviour:
     max_health: 0
     movement_speed: 1
     fire_rate: 1
-    critical_rate: 2
+    critical_rate: 0
     damage: 1
     shoot_speed: 1
-    elemental_damage: 0
-  upgradeDependacies: []
+    elemental_damage: 3

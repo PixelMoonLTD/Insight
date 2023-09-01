@@ -56,7 +56,8 @@ public class StatSpread : MonoBehaviour
     }
 
     public void DisplayStats()
-    { 
+    {
+        stats = GameManager.instance.player.GetComponent<Player>().GetStats();
 
         text[5].text = "Max Health: " + stats.max_health.ToString();
 

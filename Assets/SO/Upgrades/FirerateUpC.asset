@@ -22,8 +22,10 @@ MonoBehaviour:
   BulletObj: {fileID: 0}
   newStats:
     max_health: 0
-    fire_rate: 1.01
     movement_speed: 1
+    fire_rate: 1.01
     critical_rate: 0
     damage: 1
     shoot_speed: 1
+    elemental_damage: 0
+  upgradeDependacies: []

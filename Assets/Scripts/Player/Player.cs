@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Enemies.Scripts;
 using Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
@@ -89,10 +85,10 @@ public class Player : MonoBehaviour, IDamageable
         health -= amount;
     }
 
-    //need to change so it knows what stat is being passed in
+    
     public void IncreasePlayerStat(PlayerStats stat)
     {
-        //+= for ones that are int, *= for those that are floats (standard increase vs % increase)
+        ///+= for ones that are int, *= for those that are floats (standard increase vs % increase)
         stats.max_health += stat.max_health;
         stats.fire_rate *= stat.fire_rate;
         stats.movement_speed *= stat.movement_speed;
@@ -107,6 +103,14 @@ public class Player : MonoBehaviour, IDamageable
     public void ChangeBulletType(GameObject bulletID)
     {
         selectedBullet = bulletID;
+        PlayerStats _stats = new PlayerStats();
+        _stats.fire_rate = 1;
+        _stats.movement_speed = 1;
+        _stats.damage = 1;
+        _stats.shoot_speed = 1;
+        _stats.elemental_damage = 10;
+
+        IncreasePlayerStat(_stats);
     }
 
     public PlayerStats GetStats()

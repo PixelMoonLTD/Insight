@@ -17,7 +17,7 @@ MonoBehaviour:
   permanent: 0
   upgradeName: Fire Bullets
   description: 
-  icon: {fileID: 21300000, guid: fad537f7b1df74e869915bbab4356a0f, type: 3}
+  icon: {fileID: 21300000, guid: 09a60ea3f085f974f9a27254a237bdb3, type: 3}
   stackable: 0
   BulletObj: {fileID: 3789277746024473864, guid: c768f6b7bffd4f0458d1cf6ea2fd73ca, type: 3}
   newStats:
@@ -28,3 +28,5 @@ MonoBehaviour:
     damage: 0
     shoot_speed: 0
     elemental_damage: 0
+  upgradeDependacies:
+  - {fileID: 11400000, guid: 5c16ed123c51b1647a118c33edc91e99, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AttackUpL
   m_EditorClassIdentifier: 
   upgradeType: 0
-  tier: 0
+  tier: 2
   permanent: 0
   upgradeName: Attack Up
   description: Ups attack by 35%
@@ -22,8 +22,10 @@ MonoBehaviour:
   BulletObj: {fileID: 0}
   newStats:
     max_health: 0
-    fire_rate: 1
     movement_speed: 1
+    fire_rate: 1
     critical_rate: 0
     damage: 1.35
     shoot_speed: 1
+    elemental_damage: 0
+  upgradeDependacies: []

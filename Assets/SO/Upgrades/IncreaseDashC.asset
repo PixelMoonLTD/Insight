@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f60892802722e714e819bb061e1243bf, type: 3}
-  m_Name: PoisonBullets
+  m_Name: IncreaseDashC
   m_EditorClassIdentifier: 
-  upgradeType: 5
-  tier: 1
+  upgradeType: 0
+  tier: 0
   permanent: 0
-  upgradeName: Poison Bullets
+  upgradeName: 
   description: 
-  icon: {fileID: 21300000, guid: b1502daf00e566c42beb9c4718793a7e, type: 3}
+  icon: {fileID: 0}
   stackable: 0
-  BulletObj: {fileID: 3789277746024473864, guid: 9a7a388a45e978447b05a33c7206ccb2, type: 3}
+  BulletObj: {fileID: 0}
   newStats:
     max_health: 0
     movement_speed: 0
@@ -28,5 +28,4 @@ MonoBehaviour:
     damage: 0
     shoot_speed: 0
     elemental_damage: 0
-  upgradeDependacies:
-  - {fileID: 11400000, guid: 5c16ed123c51b1647a118c33edc91e99, type: 2}
+  upgradeDependacies: []
