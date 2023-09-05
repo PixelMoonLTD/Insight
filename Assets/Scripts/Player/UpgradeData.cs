@@ -5,12 +5,12 @@ using UnityEngine;
 
 public enum UpgradeType
 {
+    BULLETCHANGE,
     STATBUFF,
     FIREPATTERN,
     POWERUNLOCK,
     POWERBUFF,
-    WEAPONBUFF,
-    BULLETCHANGE
+    WEAPONBUFF
 }
 
 public enum UpgradeTier

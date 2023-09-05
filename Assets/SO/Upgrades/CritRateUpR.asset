@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60892802722e714e819bb061e1243bf, type: 3}
   m_Name: CritRateUpR
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 1
   tier: 1
   permanent: 0
   upgradeName: Crit Up
-  description: 
+  description: Moderate Crit up chance
   icon: {fileID: 0}
   stackable: 1
   BulletObj: {fileID: 0}

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60892802722e714e819bb061e1243bf, type: 3}
   m_Name: FireBullets
   m_EditorClassIdentifier: 
-  upgradeType: 5
+  upgradeType: 0
   tier: 1
   permanent: 0
   upgradeName: Fire Bullets
-  description: 
+  description: Gives your shots a firey edge
   icon: {fileID: 21300000, guid: 09a60ea3f085f974f9a27254a237bdb3, type: 3}
   stackable: 0
   BulletObj: {fileID: 3789277746024473864, guid: c768f6b7bffd4f0458d1cf6ea2fd73ca, type: 3}

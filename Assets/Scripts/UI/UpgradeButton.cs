@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 
 public class UpgradeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 { 
     [SerializeField] Image icon;
-
-    [SerializeField] TMP_Text text;
-
-    [SerializeField] TMP_Text desc;
 
     UpgradeData data_;
     public void OnPointerEnter(PointerEventData eventData)
@@ -31,7 +24,7 @@ public class UpgradeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         data_ = data;
         icon.sprite = data.icon;
-        text.text = data.upgradeName;
-        desc.text = data.description;
+        GetComponent<TooltipTrigger>().header = data.upgradeName;
+        GetComponent<TooltipTrigger>().content = data.description;
     }
 }

@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60892802722e714e819bb061e1243bf, type: 3}
   m_Name: HealthUp
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 1
   tier: 1
   permanent: 0
   upgradeName: Health Up
-  description: 
-  icon: {fileID: 0}
+  description: Adds a little bit of health
+  icon: {fileID: 21300000, guid: be340a165cb9c8d4cb50f1deeb51d4ea, type: 3}
   stackable: 1
   BulletObj: {fileID: 0}
   newStats:
-    max_health: 15
-    fire_rate: 1
+    max_health: 35
     movement_speed: 1
+    fire_rate: 1
     critical_rate: 0
     damage: 1
     shoot_speed: 1
+    elemental_damage: 0
+  upgradeDependacies: []

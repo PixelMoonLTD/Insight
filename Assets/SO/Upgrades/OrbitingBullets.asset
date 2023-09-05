@@ -12,16 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60892802722e714e819bb061e1243bf, type: 3}
   m_Name: OrbitingBullets
   m_EditorClassIdentifier: 
-  upgradeType: 1
+  upgradeType: 2
   tier: 2
   permanent: 0
   upgradeName: Orbit Shot
   description: 
   icon: {fileID: 0}
   stackable: 0
-  BulletID: 0
+  BulletObj: {fileID: 0}
   newStats:
     max_health: 0
-    fire_rate: 0
     movement_speed: 0
+    fire_rate: 0
     critical_rate: 0
+    damage: 0
+    shoot_speed: 0
+    elemental_damage: 0
+  upgradeDependacies: []

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60892802722e714e819bb061e1243bf, type: 3}
   m_Name: FirerateUpC
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 1
   tier: 0
   permanent: 0
   upgradeName: Fire rate up

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60892802722e714e819bb061e1243bf, type: 3}
   m_Name: IncreaseDashC
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 4
   tier: 0
   permanent: 0
-  upgradeName: 
-  description: 
+  upgradeName: Increase Dash count
+  description: 'Inceases '
   icon: {fileID: 0}
   stackable: 0
   BulletObj: {fileID: 0}

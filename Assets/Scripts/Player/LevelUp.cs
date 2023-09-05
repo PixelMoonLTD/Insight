@@ -96,9 +96,18 @@ public class LevelUp : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
+            bool selected = false;
             int  rand = Random.Range(0, 2);
-            if((int)allUpgrades[i].tier >= rand)
-                upgradeList.Add(allUpgrades[Random.Range(0, allUpgrades.Count)]);
+            while (!selected)
+            {
+                UpgradeData data = allUpgrades[Random.Range(0, allUpgrades.Count)];
+
+                if ((int)data.tier >= rand)
+                {
+                    upgradeList.Add(data);
+                    selected = true;
+                }
+            }
         }
 
         return upgradeList;
