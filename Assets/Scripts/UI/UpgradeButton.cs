@@ -24,7 +24,7 @@ public class UpgradeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         data_ = data;
         icon.sprite = data.icon;
-        GetComponent<TooltipTrigger>().header = data.upgradeName;
+        GetComponent<TooltipTrigger>().header = data.upgradeName + "\n" + data.tier.ToString() + "\n" + "------------------------";
         GetComponent<TooltipTrigger>().content = data.description;
     }
 }

@@ -31,6 +31,14 @@ namespace Enemies
             }
         }
 
+        private void FixedUpdate()
+        {
+            if(enemyPool.amountSpawned == 0)
+            {
+                SpawnEnemy();
+            }
+        }
+
         private Vector2 RandomSpawnPosition()
         {
             return Random.insideUnitCircle * 8f;

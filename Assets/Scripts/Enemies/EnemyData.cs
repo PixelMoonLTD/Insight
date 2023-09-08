@@ -11,5 +11,6 @@ namespace Enemies.Scripts
         public int health;
         public int damage;
         public int speed;
+        public int XP_drop;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Interfaces;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -59,8 +60,11 @@ namespace Enemies.Scripts
 
         private void Die()
         {
-            GameManager.instance.player.GetComponent<LevelUp>().UpdateSlider(.05f);
+            //GameManager.instance.player.GetComponent<LevelUp>().UpdateSlider(.05f);
+            GameObject XP = Instantiate(AssetDatabase.LoadAssetAtPath("Assets/Prefabs/XP.prefab", typeof(GameObject)), transform.position, Quaternion.identity) as GameObject;
 
+            XP.GetComponent<addXP>().SetXP(enemyData.XP_drop);
+            //spawn XP, add xp from enemy data to xp drop
             ReturnToPool();
         }
 

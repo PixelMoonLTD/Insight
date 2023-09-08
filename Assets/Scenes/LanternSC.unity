@@ -3652,7 +3652,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6131,11 +6131,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     max_health: 100
-    movement_speed: 4
-    fire_rate: 4
+    movement_speed: 4.1
+    fire_rate: 10
     critical_rate: 3
     damage: 16
-    shoot_speed: 325
+    shoot_speed: 330
     elemental_damage: 0
   bar: {fileID: 1633556960}
   selectedBullet: {fileID: 3789277746024473864, guid: 14a4d75ac2fde5e40ae59aa9d8f98022, type: 3}
@@ -6577,6 +6577,18 @@ PrefabInstance:
     - target: {fileID: 2764793795270164387, guid: 1d92408ddf1069d4f9b685d4ef87f616, type: 3}
       propertyPath: m_Colors.m_PressedColor.r
       value: 0.3207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 2764793795270164387, guid: 1d92408ddf1069d4f9b685d4ef87f616, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.6784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 2764793795270164387, guid: 1d92408ddf1069d4f9b685d4ef87f616, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.6784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 2764793795270164387, guid: 1d92408ddf1069d4f9b685d4ef87f616, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.6784314
       objectReference: {fileID: 0}
     - target: {fileID: 2764793795270164387, guid: 1d92408ddf1069d4f9b685d4ef87f616, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.a

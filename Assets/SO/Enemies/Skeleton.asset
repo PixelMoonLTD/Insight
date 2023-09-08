@@ -15,6 +15,7 @@ MonoBehaviour:
   enemyName: Skeleton
   enemyDescription: Generic enemy, weak to all types of damage.
   enemyPrefab: {fileID: 4646882661447884403, guid: 16e510c25149daf44a85f5b65641587d, type: 3}
-  health: 100
+  health: 50
   damage: 50
   speed: 1
+  XP_drop: 45
