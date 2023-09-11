@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3789277746024473863}
   - component: {fileID: 1007579239901184684}
   - component: {fileID: 6562598454543544403}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LightBlast_Ice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,9 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageType: 2
-  damage: 20
-  elementalDamage: 15
-  speed: 350
 --- !u!50 &1007579239901184684
 Rigidbody2D:
   serializedVersion: 4
